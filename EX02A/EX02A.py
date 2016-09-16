@@ -1,4 +1,6 @@
 """gffgdgdgdgdggfdgdgdfgg"""
+
+
 def profit(amount, days):
     income = amount
     for x in range(0, days):
