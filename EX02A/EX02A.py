@@ -1,3 +1,6 @@
 def profit(amount, days):
-    return amount*(days/100)
-print(profit(100, 1))
+    income = amount
+    for x in range(0, days):
+        income = income*1.01
+    return income - amount
+print(profit(100, 10))
