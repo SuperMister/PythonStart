@@ -7,6 +7,8 @@ def fibonacci_sum(n):
     :param n:
     :return:
     """
+    if n == 0:
+        return 0
     now = 1
     previous = 0
     sum = 1
@@ -15,4 +17,4 @@ def fibonacci_sum(n):
         previous = now - previous
         sum = sum + now
     return sum
-print(fibonacci_sum(5))
+print(fibonacci_sum(0))
