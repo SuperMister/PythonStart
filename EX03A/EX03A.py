@@ -1,11 +1,10 @@
-"""Fibonacci calcul."""
+"""Fibonacci summary."""
 
 
 def fibonacci_sum(n):
     """
-    Please describe here the content of this function, parameters and returnable value.
-    :param n:
-    :return:
+    :param n: last number in fibonacci
+    :return: summary of last number and all numbers before
     """
     if n == 0:
         return 0
