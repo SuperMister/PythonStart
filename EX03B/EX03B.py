@@ -9,8 +9,9 @@ def square_root_with_newton_method(number, iterations):
     g = number / 2
     for x in range (0, iterations):
         g = (g + number / g) / 2
-    rounded_root1 = "%.3f" % g
+    rounded_root1 = round(g, 3)
     return rounded_root1
+
 
 def square_root_with_exp_ln(number):
     """
@@ -18,7 +19,7 @@ def square_root_with_exp_ln(number):
     :return:
    """
     number = number**(1/2)
-    rounded_root2 = "%.3f" % number
+    rounded_root2 = round(number, 3)
     return rounded_root2
 
 def square_root_result(number, iterations):
