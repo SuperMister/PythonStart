@@ -1,3 +1,4 @@
+
 """Fibonacci calcul."""
 
 
@@ -6,7 +7,6 @@ def fibonacci_sum(n):
     :param n: Last fibonacci number.
     :return: "Return summary of all numbers before and including n"
     """
-
     if n == 0:
         return 0
     now = 1
