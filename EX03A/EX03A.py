@@ -3,15 +3,17 @@
 
 def fibonacci_sum(n):
     """
-    :param n:
-    :return:
+    :param n: last fibonacci number
+    :return: summary of fibonacci numbers until and including n
     """
+    if n == 0:
+        return 0
     now = 1
-    previous = 1
-    sum = 0
-    for x in range(0, n+1):
+    previous = 0
+    sum = 1
+    for x in range(0, n-1):
         now = now + previous
         previous = now - previous
         sum = sum + now
     return sum
-print(fibonacci_sum(5))
+print(fibonacci_sum(1))
