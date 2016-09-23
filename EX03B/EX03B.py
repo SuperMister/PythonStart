@@ -20,7 +20,7 @@ def square_root_with_exp_ln(number):
 
     :param number: Number we want root from.
     :return: Return root with logarithm method.
-   """
+    """
     number **= (1 / 2)
     rounded_root2 = round(number, 3)
     return rounded_root2
