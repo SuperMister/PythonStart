@@ -3,7 +3,7 @@
 
 
 def fibonacci_sum(n):
-    """Parametrs of function.
+    """Parametr of function.
 
     :param n: Last fibonacci number.
     :return: "Return summary of all numbers before and including n"
