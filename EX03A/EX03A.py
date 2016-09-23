@@ -2,7 +2,6 @@
 
 
 def fibonacci_sum(n):
-
     """
     :param n: "Last fibonacci number"
     :return: "Return summary of all numbers before and including n"
