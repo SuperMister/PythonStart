@@ -12,9 +12,9 @@ def investment(initial_amount, month_amount, inv_percent, years):
     """
     for x in range(0, (years*12)):
         if(x == 0):
-            initial_amount = initial_amount * ((1 + ((inv_percent/100)/12)))
+            initial_amount = initial_amount * (1 + ((inv_percent/100)/12))
         else:
             initial_amount = (initial_amount + month_amount) * \
-                             ((1 + ((inv_percent / 100) / 12)))
+                             (1 + ((inv_percent / 100) / 12))
     return initial_amount
-print(investment(1000, 20, 10, 5))
+print(investment(1000, 20, 8, 10))

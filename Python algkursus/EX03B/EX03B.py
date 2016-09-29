@@ -39,4 +39,4 @@ def square_root_result(number, iterations):
             "(iter: " + str(iterations) + "): " + str(newton_root) +
             "; exp-ln: " + str(normal_root))
 
-print(square_root_result(99.69, 3))
+print(square_root_result(7, 2))
