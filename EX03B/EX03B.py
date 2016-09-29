@@ -31,7 +31,7 @@ def square_root_result(number, iterations):
 
     :param number: Number we take root from.
     :param iterations: How many times we repeat action in first function.
-    :return: Return text with 2 answers
+    :return: Return text with 2 answers.
     """
     newton_root = square_root_with_newton_method(number, iterations)
     normal_root = square_root_with_exp_ln(number)
