@@ -1,4 +1,4 @@
-"""Drawing garden"""
+"""Drawing garden."""
 from graphics import *
 
 
