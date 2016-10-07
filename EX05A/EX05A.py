@@ -1,4 +1,4 @@
-"""Acronym making"""
+"""Acronym making."""
 
 
 def not_allowed_characters_check(text, chars):
