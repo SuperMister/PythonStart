@@ -25,5 +25,3 @@ def caesar_encode(text, shift):
             encoded += char
     return encoded
 print(caesar_encode("AAa!a", 1))
-
-
