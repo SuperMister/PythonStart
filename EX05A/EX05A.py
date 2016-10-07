@@ -18,7 +18,7 @@ def len_of_list(text):
 def acronym(text, chars, nr_of_words_limit):
     if not_allowed_characters_check(text, chars):
         return "Input: " + "\"" + text + "\"" + " contains not allowed characters!"
-    if len_of_list(text) >= nr_of_words_limit:
+    if len_of_list(text) > nr_of_words_limit:
         return "Input: " + "\"" + text + "\"" + " is too long (max length is " + str(nr_of_words_limit) + " words)!"
     text = text.split()
     letters = ""
