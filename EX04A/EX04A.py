@@ -1,5 +1,5 @@
 """Drawing garden."""
-from graphics import *
+from graphics import Rectangle, Point, Circle, GraphWin
 
 
 def fence_width(a, nr):
