@@ -1,5 +1,5 @@
 """Draw stair construction with door."""
-from graphics import Line, GraphWin
+from graphics import Line, GraphWin, Point
 
 
 a = 20
