@@ -99,7 +99,6 @@ def personal_ID_nr_check(personal_ID_nr):
     :param personal_ID_nr: Given ID.
     :return: Return result of ID test.
     """
-
     if len_of_personal_ID(personal_ID_nr) != 11:
         return 'Personal ID number is incorrect – wrong length'
 
