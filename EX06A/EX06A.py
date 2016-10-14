@@ -10,7 +10,7 @@ def calculate_check_digit(personal_ID_nr_first_10_digits):
     control_number = 0
     personal_ID_nr_first_10_digits = str(personal_ID_nr_first_10_digits)
     for i in range(10):
-        control_number += int(personal_ID_nr_first_10_digits[i]) *\
+        control_number += int(personal_ID_nr_first_10_digits[i]) * \
                           ((i % 9) + 1)
 
     control_number %= 11
@@ -18,7 +18,7 @@ def calculate_check_digit(personal_ID_nr_first_10_digits):
     if control_number == 10:
         control_number = 0
         for i in range(10):
-            control_number += int(personal_ID_nr_first_10_digits[i]) *\
+            control_number += int(personal_ID_nr_first_10_digits[i]) * \
                               (((i + 2) % 9) + 1)
         control_number %= 11
         if control_number == 10:
@@ -122,7 +122,8 @@ def personal_ID_nr_check(personal_ID_nr):
     if max_days_in_month(year, month) < day or day == 0:
         return 'Personal ID number is incorrect – wrong day number'
 
-    if int(calculate_check_digit(personal_ID_nr[0:10])) != int(personal_ID_nr[10]):
+    if (calculate_check_digit(personal_ID_nr[0:10])) !=\
+            int(personal_ID_nr[10:]):
         return 'Personal ID number is incorrect – wrong check digit'
 
     return 'Personal ID number is correct!'
