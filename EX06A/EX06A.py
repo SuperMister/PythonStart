@@ -10,14 +10,16 @@ def calculate_check_digit(personal_ID_nr_first_10_digits):
     control_number = 0
     personal_ID_nr_first_10_digits = str(personal_ID_nr_first_10_digits)
     for i in range(10):
-        control_number += int(personal_ID_nr_first_10_digits[i]) * ((i % 9) + 1)
+        control_number += int(personal_ID_nr_first_10_digits[i]) *\
+                          ((i % 9) + 1)
 
     control_number %= 11
 
     if control_number == 10:
         control_number = 0
         for i in range(10):
-            control_number += int(personal_ID_nr_first_10_digits[i]) * (((i + 2) % 9) + 1)
+            control_number += int(personal_ID_nr_first_10_digits[i]) *\
+                              (((i + 2) % 9) + 1)
         control_number %= 11
         if control_number == 10:
             control_number = 0
@@ -31,6 +33,7 @@ def len_of_personal_ID(personal_ID_nr):
     :param personal_ID_nr: Given ID.
     :return: Return number of digits in ID.
     """
+    personal_ID_nr = str(personal_ID_nr)
     return len(personal_ID_nr)
 
 
@@ -38,7 +41,8 @@ def personal_ID_characters_check(personal_ID_nr):
     """Check for unresolved characters.
 
     :param personal_ID_nr: Given ID.
-    :return: Return True if ID does not contain unresolved characters. Return False if ID contains unresolved characters.
+    :return: Return True if ID does not contain unresolved characters.
+     Return False if ID contains unresolved characters.
     """
     personal_ID_nr = str(personal_ID_nr)
     numbers = "0123456789"
@@ -52,10 +56,11 @@ def gender_feature_check(personal_ID_nr):
     """Check for correctness of 1 number.
 
     :param personal_ID_nr: Gived ID.
-    :return: Return True if first number is correct. Return False if first number is not correct.
+    :return: Return True if first number is correct.
+     Return False if first number is not correct.
     """
     personal_ID_nr = str(personal_ID_nr)
-    if int(personal_ID_nr[0]) in range (0, 7):
+    if int(personal_ID_nr[0]) in range(0, 7):
             return True
     return False
 
@@ -64,10 +69,11 @@ def month_number_check(month):
     """Check if month input is right.
 
     :param month: Month
-    :return: Return True if month number is right. Return False if month number is wrong.
+    :return: Return True if month number is right.
+     Return False if month number is wrong.
     """
     month = int(month)
-    if month in range (1, 13):
+    if month in range(1, 13):
         return True
     return False
 
