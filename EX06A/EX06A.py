@@ -122,9 +122,8 @@ def personal_ID_nr_check(personal_ID_nr):
     if max_days_in_month(year, month) < day or day == 0:
         return 'Personal ID number is incorrect – wrong day number'
 
-    if calculate_check_digit(personal_ID_nr[0:10]) != int(personal_ID_nr[10]):
+    if int(calculate_check_digit(personal_ID_nr[0:10])) != int(personal_ID_nr[10]):
         return 'Personal ID number is incorrect – wrong check digit'
 
     return 'Personal ID number is correct!'
 print(personal_ID_nr_check("39707250820"))
-
