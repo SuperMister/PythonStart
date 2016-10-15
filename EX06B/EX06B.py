@@ -1,27 +1,29 @@
 def find_gender_number(year, gender):
-    first = 0
-    if int(year) in range(1800, 1900):
-        if gender == "M":
-            first += 1
-        if gender == "F":
-            first += 2
-    if int(year) in range(1900, 2000):
-        if gender == "M":
-            first += 3
-        if gender == "F":
-            first += 4
-    if int(year) in range(2000, 2100):
-        if gender == "M":
-            first += 5
-        if gender == "F":
-            first += 6
-    if int(year) in range(2100, 2200):
-        if gender == "M":
-            first += 7
-        if gender == "F":
-            first += 8
-        first = str(first)
-    return first
+    if gender == "M" or gender == "F":
+        first = 0
+        if int(year) in range(1800, 1900):
+            if gender == "M":
+                first += 1
+            if gender == "F":
+                first += 2
+        if int(year) in range(1900, 2000):
+            if gender == "M":
+                first += 3
+            if gender == "F":
+                first += 4
+        if int(year) in range(2000, 2100):
+            if gender == "M":
+                first += 5
+            if gender == "F":
+                first += 6
+        if int(year) in range(2100, 2200):
+            if gender == "M":
+                first += 7
+            if gender == "F":
+                first += 8
+            first = str(first)
+        return first
+    return False
 
 
 def max_days_in_month(year, month):
@@ -98,7 +100,7 @@ def calculate_check_digit(personal_ID_nr_first_10_digits):
 
 
 def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
-    if gender != "M" and gender != "F":
+    if not find_gender_number(year, gender):
         return "Incorrect gender (allowed ’M’ or ’F’)"
     if find_general_number(hospital_index, sequence_nr) == False:
         return "Incorrect hospital index number (allowed 1-13)"
@@ -120,5 +122,5 @@ def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
     ID = str(find_gender_number(year, gender)) + year2 + month + day +\
         (find_general_number(hospital_index, sequence_nr) + str(calculate_check_digit(personal_ID_nr_first_10_digits)))
     return ID
-print(personal_ID_nr('F', 1998, 10,  1 , 10, 55) )
+print(personal_ID_nr('S', 1998, 10,  1 , 10, 55) )
 
