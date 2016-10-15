@@ -44,7 +44,7 @@ def validate_date(year, month, day):
     for num_year in year:
         if num_year not in number:
             return False
-    if int(year) not in range(1900, 2100):
+    if int(year) not in range(1800, 2100):
         return "Incorrect year (allowed 1900-2099)"
     for num_month in month:
         if num_month not in month:
@@ -120,6 +120,6 @@ def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
     ID = str(find_gender_number(year, gender)) + year2 + month + day +\
         (find_general_number(hospital_index, sequence_nr) + str(calculate_check_digit(personal_ID_nr_first_10_digits)))
     return ID
-print(personal_ID_nr('s', 1998, 10,  1 , 10, 55) )
+print(personal_ID_nr('M', 1800 , 10,  1 , 10, 7) )
 
 
