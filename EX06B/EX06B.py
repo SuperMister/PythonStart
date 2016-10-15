@@ -122,3 +122,4 @@ def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
     return ID
 print(personal_ID_nr('s', 1998, 10,  1 , 10, 55) )
 
+
