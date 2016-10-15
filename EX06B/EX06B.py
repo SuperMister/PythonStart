@@ -1,29 +1,30 @@
 def find_gender_number(year, gender):
-    if gender == "M" or gender == "F":
-        first = 0
-        if int(year) in range(1800, 1900):
-            if gender == "M":
-                first += 1
-            if gender == "F":
-                first += 2
-        if int(year) in range(1900, 2000):
-            if gender == "M":
-                first += 3
-            if gender == "F":
-                first += 4
-        if int(year) in range(2000, 2100):
-            if gender == "M":
-                first += 5
-            if gender == "F":
-                first += 6
-        if int(year) in range(2100, 2200):
-            if gender == "M":
-                first += 7
-            if gender == "F":
-                first += 8
-            first = str(first)
-        return first
-    return False
+    if gender != "M" and gender != "F":
+        return False
+
+    first = 0
+    if int(year) in range(1800, 1900):
+        if gender == "M":
+            first += 1
+        if gender == "F":
+            first += 2
+    if int(year) in range(1900, 2000):
+        if gender == "M":
+            first += 3
+        if gender == "F":
+            first += 4
+    if int(year) in range(2000, 2100):
+        if gender == "M":
+            first += 5
+        if gender == "F":
+            first += 6
+    if int(year) in range(2100, 2200):
+        if gender == "M":
+            first += 7
+        if gender == "F":
+            first += 8
+        first = str(first)
+    return first
 
 
 def max_days_in_month(year, month):
