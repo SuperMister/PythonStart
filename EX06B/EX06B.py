@@ -141,13 +141,13 @@ def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
     if gender != "M" and gender != "F":
         return "Incorrect gender (allowed 'M' or 'F')"
 
-    if find_general_number(hospital_index, sequence_nr) == False:
+    if find_general_number(hospital_index, sequence_nr) is False:
         return "Incorrect hospital index number (allowed 1-13)"
 
     if find_general_number(hospital_index, sequence_nr) == "0":
         return "Incorrect person's sequence number (too big)"
 
-    if validate_date(year, month, day) != True:
+    if validate_date(year, month, day) is not True:
         return validate_date(year, month, day)
 
     year2 = str(year)
