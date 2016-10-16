@@ -12,22 +12,22 @@ def find_gender_number(year, gender):
     if int(year) in range(1800, 1900):
         if gender == "M":
             first += 1
-        if gender == "F":
+        else:
             first += 2
     if int(year) in range(1900, 2000):
         if gender == "M":
             first += 3
-        if gender == "F":
+        else:
             first += 4
     if int(year) in range(2000, 2100):
         if gender == "M":
             first += 5
-        if gender == "F":
+        else:
             first += 6
     if int(year) in range(2100, 2200):
         if gender == "M":
             first += 7
-        if gender == "F":
+        else:
             first += 8
         first = str(first)
     return first
