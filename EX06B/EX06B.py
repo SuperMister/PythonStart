@@ -1,4 +1,13 @@
+"""Generate ID."""
+
+
 def find_gender_number(year, gender):
+    """Find first-gender number.
+
+    :param year: Birth year.
+    :param gender: Gender.
+    :return: Return first number of ID.
+    """
     first = 0
     if int(year) in range(1800, 1900):
         if gender == "M":
@@ -25,6 +34,12 @@ def find_gender_number(year, gender):
 
 
 def max_days_in_month(year, month):
+    """Count max days in month.
+
+    :param year: Year input.
+    :param month: Month input.
+    :return:Return max days in month.
+    """
     year = int(year)
     month = int(month)
     days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -36,7 +51,15 @@ def max_days_in_month(year, month):
 
     return max_days
 
+
 def validate_date(year, month, day):
+    """Check date.
+
+    :param year: Birth year.
+    :param month: Birth month.
+    :param day: Birthday.
+    :return: Return correctness of input date.
+    """
     year = str(year)
     month = str(month)
     day = str(day)
@@ -59,7 +82,14 @@ def validate_date(year, month, day):
         return "Incorrect day (allowed 1-" + str(max_days_in_month(year, month)) + ")"
     return True
 
+
 def find_general_number(hospital_index, sequence_nr):
+    """Generate hospital number.
+
+    :param hospital_index: Number of hospital.
+    :param sequence_nr: Orderliness of birth.
+    :return: Return hospital number.
+    """
     hospital_number = [1, 11, 21, 221, 271, 371, 421, 471, 491, 521, 571, 601, 651]
     if hospital_index not in range(1, 14):
         return False
@@ -98,12 +128,25 @@ def calculate_check_digit(personal_ID_nr_first_10_digits):
 
 
 def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
+    """Generate ID.
+
+    :param gender: Gender.
+    :param year: Birth year.
+    :param month: Birth month.
+    :param day: Birthday.
+    :param hospital_index: Number of hospital.
+    :param sequence_nr: Orderliness of birth.
+    :return: Return ID.
+    """
     if gender != "M" and gender != "F":
         return "Incorrect gender (allowed 'M' or 'F')"
+
     if find_general_number(hospital_index, sequence_nr) == False:
         return "Incorrect hospital index number (allowed 1-13)"
+
     if find_general_number(hospital_index, sequence_nr) == "0":
         return "Incorrect person's sequence number (too big)"
+
     if validate_date(year, month, day) != True:
         return validate_date(year, month, day)
 
@@ -115,11 +158,8 @@ def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
         month = "0" + month
     if len(day) == 1:
         day = "0" + day
-    personal_ID_nr_first_10_digits = str(find_gender_number(year, gender)) + year2 + month + day +\
-         find_general_number(hospital_index, sequence_nr)
-    ID = str(find_gender_number(year, gender)) + year2 + month + day +\
-        (find_general_number(hospital_index, sequence_nr) + str(calculate_check_digit(personal_ID_nr_first_10_digits)))
+    personal_ID_nr_first_10_digits = str(find_gender_number(year, gender)) + year2 + month + day
+    personal_ID_nr_first_10_digits += find_general_number(hospital_index, sequence_nr)
+    ID = str(personal_ID_nr_first_10_digits) + str(calculate_check_digit(personal_ID_nr_first_10_digits))
     return ID
-print(personal_ID_nr('s', 1800 , 10,  1 , 10, 55))
-
-
+print(personal_ID_nr('M', 1500, 10, 1, 10, 10))
