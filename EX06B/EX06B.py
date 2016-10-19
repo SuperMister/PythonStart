@@ -95,7 +95,7 @@ def find_general_number(hospital_index, sequence_nr):
         return False
     hospital_staff = int(hospital_number[hospital_index - 1]) + (sequence_nr - 1)
     if hospital_staff >= int(hospital_number[hospital_index]):
-        return "0"
+        return 0
     hospital_staff = str(hospital_staff)
     if len(hospital_staff) == 1:
         return "00" + hospital_staff
@@ -144,7 +144,7 @@ def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
     if find_general_number(hospital_index, sequence_nr) is False:
         return "Incorrect hospital index number (allowed 1-13)"
 
-    if find_general_number(hospital_index, sequence_nr) == "0":
+    if find_general_number(hospital_index, sequence_nr) == 0:
         return "Incorrect person's sequence number (too big)"
 
     if validate_date(year, month, day) is not True:
@@ -162,4 +162,4 @@ def personal_ID_nr(gender, year, month, day, hospital_index, sequence_nr):
     personal_ID_nr_first_10_digits += find_general_number(hospital_index, sequence_nr)
     ID = str(personal_ID_nr_first_10_digits) + str(calculate_check_digit(personal_ID_nr_first_10_digits))
     return ID
-print(personal_ID_nr('M', 1500, 10, 1, 10, 10))
+print(personal_ID_nr('M', 2000, 10, 1, 10, 55))
