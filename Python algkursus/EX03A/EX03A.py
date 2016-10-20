@@ -18,4 +18,4 @@ def fibonacci_sum(n):
         previous = now - previous
         sum = sum + now
     return sum
-print(fibonacci_sum(100))
+print(fibonacci_sum(5))

@@ -67,8 +67,8 @@ def main():
 
     :return: Draw garden with 3 trees and fence.
     """
-    a = 5
-    nr = 100
+    a = 20
+    nr = 20
     win = GraphWin("My Garden", fence_width(a, nr) + 1, 20 * a + 1)
     number_of_trees = 3
     dist = (fence_width(a, nr) - number_of_trees * 9 * a) / 6

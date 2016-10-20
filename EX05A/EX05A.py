@@ -51,5 +51,5 @@ def main():
     """Print acronym."""
     nr_of_words_limit = 2
     chars = "abcdefghijklmnopqrstuvwõäöüxyz"
-    print(acronym("Tere, ma olen Juri", chars, nr_of_words_limit))
+    print(acronym("National Geographics", chars, nr_of_words_limit))
 main()
