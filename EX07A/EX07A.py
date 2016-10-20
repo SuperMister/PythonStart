@@ -1,4 +1,6 @@
 """Find maximum, minimum and median of 3 numbers."""
+
+
 def min_med_max(x, y, z):
     """Compare 3 numbers and give maximum, minimum and median.
 
