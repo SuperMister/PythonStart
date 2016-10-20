@@ -5,7 +5,7 @@ def min_med_max(x, y, z):
     :param x: First number.
     :param y: Second number.
     :param z: Third number.
-    :return: Return list of numbers where first number is minimum, second is median and third is maximum
+    :return: Return list of numbers where first number is minimum, second is median and third - maximum
     """
     if x >= y and x >= z:
         if y >= z:
