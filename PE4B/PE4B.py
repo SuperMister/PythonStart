@@ -1,5 +1,6 @@
 """Summarise every second element of fibonacci numbers."""
 
+
 def fibo_sum_every_second(number):
     """Count summary of every second fibonacci number.
 
