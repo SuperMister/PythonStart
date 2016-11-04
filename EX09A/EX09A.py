@@ -1,24 +1,24 @@
-"""EUR."""
+"""Count rise of EUR comparing to USD."""
 
 
 def read_from_file(file):
-    """V POPKU PLIZ.
+    """Convert file info to list.
 
-    :param file:
-    :return:
+    :param file: File that function reads from.
+    :return: Return list of info that was in file.
     """
-    rows = []
+    list = []
     txt_file = open(file)
     for line in txt_file:
         if line.rstrip("\n") != "":
-            rows.append(line.rstrip("\n"))
-    return rows
+            list.append(line.rstrip("\n"))
+    return list
 
 
 def euro_rates_main():
-    """EBAWIT NE PO DETSKI.
+    """Give info about longest increase period of EUR.
 
-    :return:
+    :return: String with info about longest increase period od EUR.
     """
     file = "1 EUR_X USD.txt"
     dates = []
@@ -30,11 +30,12 @@ def euro_rates_main():
 
 
 def the_longest_increase_of_euro(dates, rates):
-    """DLINNQJ KAK MORE.
+    """Count the longest increase of EUR.
 
-    :param dates:
-    :param rates:
-    :return:
+    :param dates: List of dates.
+    :param rates: List of EUR rates.
+    :return: Return String with the date of start of the longest period and EUR rate on this date
+    and the date of the end of longest period and EUR rate on this date.
     """
     start = 0
     end = 0
