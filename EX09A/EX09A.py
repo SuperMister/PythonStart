@@ -10,6 +10,7 @@ def read_from_file(y):
     return rows
 
 
+
 def euro_rates_main():
     """
 
