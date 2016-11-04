@@ -43,8 +43,8 @@ def the_longest_increase_of_euro(dates, rates):
                     biggest_start_of_period = start
         elif rates[i + 1] < rates[i]:
             start = i + 1
-    longest_increase_dates = dates[biggest_start_of_period] + " (" + str(rates[biggest_start_of_period]) + ") - " \
-                             + dates[biggest_end_of_period] + " " + str(rates[biggest_end_of_period])
+    longest_increase_dates = dates[biggest_start_of_period] + " (" + str(rates[biggest_start_of_period]) + ") – " \
+                             + dates[biggest_end_of_period] + " " + "(" + str(rates[biggest_end_of_period]) + ")"
     return longest_increase_dates
 
 
