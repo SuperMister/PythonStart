@@ -1,16 +1,13 @@
 """EUR"""
 
 
-def read_from_file(y):
+def read_from_file(file):
     rows = []
-    txt_file = open(y)
+    txt_file = open(file)
     for line in txt_file:
         if line.rstrip("\n") != "":
             rows.append(line.rstrip("\n"))
     return rows
-
-
-
 
 
 def euro_rates_main():
@@ -18,7 +15,7 @@ def euro_rates_main():
 
     :return:
     """
-    y = "1 EUR_X USD.txt"
+    file = "1 EUR_X USD.txt"
     dates = []
     rates = []
     for i in read_from_file(y):
@@ -43,8 +40,8 @@ def the_longest_increase_of_euro(dates, rates):
                     biggest_start_of_period = start
         elif rates[i + 1] < rates[i]:
             start = i + 1
-    longest_increase_dates = dates[biggest_start_of_period] + " (" + str(rates[biggest_start_of_period]) + ") – " \
-                             + dates[biggest_end_of_period] + " " + "(" + str(rates[biggest_end_of_period]) + ")"
+    longest_increase_dates = dates[biggest_start_of_period] + " (" + str(rates[biggest_start_of_period]) + ") – " + \
+        dates[biggest_end_of_period] + " " + "(" + str(rates[biggest_end_of_period]) + ")"
     return longest_increase_dates
 
 
