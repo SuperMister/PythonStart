@@ -14,7 +14,7 @@ def caesar_encode(text, shift):
     encoded = ""
     for char in text:
         if char in alphabet:
-            small_index = alphabet.index(char) + shift
+            small_index = alphabet.index(char) + shift + shift
             small_index %= len(alphabet)
             encoded += alphabet[small_index]
         elif char in big_alphabet:
@@ -24,4 +24,4 @@ def caesar_encode(text, shift):
         else:
             encoded += char
     return encoded
-print(caesar_encode("AAa!a", 1))
+print(caesar_encode("xyz", 1))

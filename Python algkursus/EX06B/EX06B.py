@@ -97,7 +97,7 @@ def find_general_number(hospital_index, sequence_nr):
     if hospital_staff >= int(hospital_number[hospital_index]):
         return 0
     hospital_staff = str(hospital_staff)
-    if len(hospital_staff) == 1:
+    if len(hospital_staff)  == 1:
         return "00" + hospital_staff
     if len(hospital_staff) == 2:
         return "0" + hospital_staff
