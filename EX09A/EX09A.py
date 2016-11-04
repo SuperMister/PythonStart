@@ -23,6 +23,7 @@ def euro_rates_main():
         rates.append(i.split("\t")[1])
     return "The longest increase of euro in USD is: " + str(the_longest_increase_of_euro(dates, rates))
 
+
 def the_longest_increase_of_euro(dates, rates):
     start = 0
     end = 0
