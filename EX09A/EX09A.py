@@ -45,4 +45,5 @@ def the_longest_increase_of_euro(dates, rates):
     return longest_increase_dates
 
 
+
 print(euro_rates_main())
