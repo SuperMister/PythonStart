@@ -1,7 +1,12 @@
-"""EUR"""
+"""EUR."""
 
 
 def read_from_file(file):
+    """V POPKU PLIZ.
+
+    :param file:
+    :return:
+    """
     rows = []
     txt_file = open(file)
     for line in txt_file:
@@ -11,7 +16,7 @@ def read_from_file(file):
 
 
 def euro_rates_main():
-    """
+    """EBAWIT NE PO DETSKI.
 
     :return:
     """
@@ -25,6 +30,12 @@ def euro_rates_main():
 
 
 def the_longest_increase_of_euro(dates, rates):
+    """DLINNQJ KAK MORE.
+
+    :param dates:
+    :param rates:
+    :return:
+    """
     start = 0
     end = 0
     biggest_start_of_period = 0
