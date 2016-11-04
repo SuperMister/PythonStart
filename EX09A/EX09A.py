@@ -18,7 +18,7 @@ def euro_rates_main():
     file = "1 EUR_X USD.txt"
     dates = []
     rates = []
-    for i in read_from_file(y):
+    for i in read_from_file(file):
         dates.append(i.split("\t")[0])
         rates.append(i.split("\t")[1])
     return "The longest increase of euro in USD is: " + str(the_longest_increase_of_euro(dates, rates))
