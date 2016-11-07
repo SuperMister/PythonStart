@@ -2,7 +2,7 @@ import EX09A
 
 
 def test_empty_lines():
-    """Test if function do not read empty lines."""
+    """ Test if function do not read empty lines."""
     assert EX09A.read_from_file("TEST for EMPTY LINES") == ['4.01.2016\t1.0898', '5.01.2016\t1.0746']
 
 
