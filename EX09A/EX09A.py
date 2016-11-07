@@ -5,7 +5,7 @@ def read_from_file(file):
     """Convert file info to list.
 
     :param file: File that function reads from.
-    :return:  Return list of info that was in file.
+    :return: Return list of info that was in file.
     """
     list = []
     txt_file = open(file)
