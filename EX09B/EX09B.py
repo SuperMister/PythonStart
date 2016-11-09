@@ -1,3 +1,4 @@
+
 """EUR."""
 
 
@@ -71,7 +72,7 @@ def seq_nr_of_min_rate(rates):
     return index_of_smallest_rate
 
 
-def number_of_rates_in_range (rates, min, max):
+def number_of_rates_in_range(rates, min, max):
     """
 
     :param rates:
@@ -83,9 +84,9 @@ def number_of_rates_in_range (rates, min, max):
     min_interval = 0
     max_interval = 0
     for i in rates:
-        if float(i) <= middle_rate:
+        if float(i) < middle_rate:
             min_interval += 1
-        elif float(i) >= middle_rate:
+        elif float(i) > middle_rate:
             max_interval += 1
     return min_interval, max_interval
 
