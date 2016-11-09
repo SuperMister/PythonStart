@@ -11,13 +11,13 @@ def euro_rates_main():
     rates = []
     for i in read_from_file(file):
         dates.append(i.split("\t")[0])
-        rates.append(i.split("\t")[1])
+        rates.append(float(i.split("\t")[1]))
     min = rates[seq_nr_of_min_rate(rates)]
     max = rates[seq_nr_of_max_rate(rates)]
     first = "Euro minimum rate: " + str(min) + " USD in " + str(dates[seq_nr_of_min_rate(rates)])
     second = "Euro maximum rate: " + str(max) + " USD in " + str(dates[seq_nr_of_max_rate(rates)])
-    third = "Euro was " + str(number_of_rates_in_range(rates, min, max)[0]) + " times in the bottom half"
-    fourth = "Euro was " + str(number_of_rates_in_range(rates, min, max)[1]) + " times in the top half"
+    third = "Euro was " + str(number_of_rates_in_range(rates, min, (max + min) / 2)) + " times in the bottom half"
+    fourth = "Euro was " + str(number_of_rates_in_range(rates, (min + max) / 2, max)) + " times in the top half"
     return first + "\n" + second + "\n" + third + "\n" + fourth
 
 
@@ -79,14 +79,9 @@ def number_of_rates_in_range(rates, min, max):
     :param max: The biggest rate of EUR in list of EUR rates.
     :return: Return number of times when Euro was in the top half and in the bottom half.
     """
-    middle_rate = (float(min) + float(max)) / 2
-    min_interval = 0
-    max_interval = 0
+    count = 0
     for i in rates:
-        if float(i) < middle_rate:
-            min_interval += 1
-        elif float(i) > middle_rate:
-            max_interval += 1
-    return min_interval, max_interval
-
+        if min <= i <= max:
+            count += 1
+    return count
 print(euro_rates_main())
