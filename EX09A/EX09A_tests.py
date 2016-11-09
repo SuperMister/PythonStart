@@ -34,9 +34,10 @@ def test_the_longest_increase_not_none():
     assert EX09A.the_longest_increase_of_euro(["4.01.2016"], ["1.0898"]) is not None
 
 
-def test_no_syntax_error():
+def test_no_syntax_error_in_increase():
     """Testf if output is not SyntaxError."""
     assert EX09A.read_from_file("1 EUR_X USD.txt") != SyntaxError
+
 
 def test_for_length_of_output():
     """Test if function output has a minimum possible length."""
