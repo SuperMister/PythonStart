@@ -1,11 +1,10 @@
-
 """EUR."""
 
 
 def euro_rates_main():
-    """
+    """Print Euro maximum and minimum rate. Print how many times Euro was in the bottom and in the top half.
 
-    :return:
+    :return: Return Euro maximum and minimum rate. Return how many times Euro was in the bottom and in the top half.
     """
     file = "1 EUR_X USD.txt"
     dates = []
@@ -37,10 +36,10 @@ def read_from_file(file):
 
 
 def seq_nr_of_max_rate(rates):
-    """
+    """Find the biggest rate of Euro.
 
-    :param rates:
-    :return:
+    :param rates: List of EUR rates.
+    :return: Return index of the biggest rate in list of EUR rates.
     """
     index_of_biggest_rate = 0
     current_index = 0
@@ -55,10 +54,10 @@ def seq_nr_of_max_rate(rates):
 
 
 def seq_nr_of_min_rate(rates):
-    """
+    """Find the lowest rate of Euro.
 
-    :param rates:
-    :return:
+    :param rates: List of EUR rates.
+    :return: Return index of the lowest rate in list of EUR rates.
     """
     index_of_smallest_rate = 0
     current_index = 0
@@ -73,20 +72,20 @@ def seq_nr_of_min_rate(rates):
 
 
 def number_of_rates_in_range(rates, min, max):
-    """
+    """Count how many times Euro rate was in the top half and in the bottom half.
 
-    :param rates:
-    :param min:
-    :param max:
-    :return:
+    :param rates: List of EUR rates.
+    :param min: The lowest rate of EUR in list of EUR rates.
+    :param max: The biggest rate of EUR in list of EUR rates.
+    :return: Return number of times when Euro was in the top half and in the bottom half.
     """
     middle_rate = (float(min) + float(max)) / 2
     min_interval = 0
     max_interval = 0
-    for i in range(len(rates)):
-        if float(rates[i]) < middle_rate:
+    for i in rates:
+        if float(i) < middle_rate:
             min_interval += 1
-        elif float(rates[i]) > middle_rate:
+        elif float(i) > middle_rate:
             max_interval += 1
     return min_interval, max_interval
 
