@@ -1,3 +1,4 @@
+
 """Count rise of EUR comparing to USD."""
 
 
