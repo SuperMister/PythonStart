@@ -83,10 +83,10 @@ def number_of_rates_in_range(rates, min, max):
     middle_rate = (float(min) + float(max)) / 2
     min_interval = 0
     max_interval = 0
-    for i in rates:
-        if float(i) < middle_rate:
+    for i in range(len(rates)):
+        if float(rates[i]) < middle_rate:
             min_interval += 1
-        elif float(i) > middle_rate:
+        elif float(rates[i]) > middle_rate:
             max_interval += 1
     return min_interval, max_interval
 
