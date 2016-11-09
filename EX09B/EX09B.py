@@ -71,7 +71,7 @@ def seq_nr_of_min_rate(rates):
     return index_of_smallest_rate
 
 
-def number_of_rates_in_range(rates, min, max):
+def number_of_rates_in_range (rates, min, max):
     """
 
     :param rates:
