@@ -1,6 +1,7 @@
 """EUR."""
 
 
+
 def euro_rates_main():
     """
 
