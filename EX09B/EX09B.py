@@ -36,6 +36,11 @@ def read_from_file(file):
 
 
 def seq_nr_of_max_rate(rates):
+    """
+
+    :param rates:
+    :return:
+    """
     index_of_biggest_rate = 0
     current_index = 0
     current_biggest = 0
@@ -49,6 +54,11 @@ def seq_nr_of_max_rate(rates):
 
 
 def seq_nr_of_min_rate(rates):
+    """
+
+    :param rates:
+    :return:
+    """
     index_of_smallest_rate = 0
     current_index = 0
     current_smallest = 0
@@ -62,6 +72,13 @@ def seq_nr_of_min_rate(rates):
 
 
 def number_of_rates_in_range(rates, min, max):
+    """
+
+    :param rates:
+    :param min:
+    :param max:
+    :return:
+    """
     middle_rate = (float(min) + float(max)) / 2
     min_interval = 0
     max_interval = 0
