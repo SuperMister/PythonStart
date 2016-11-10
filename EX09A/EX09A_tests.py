@@ -5,6 +5,7 @@ import EX09A
 
 
 def test_not_none():
+    """Test if function output is not None."""
     assert EX09A.read_from_file("1 EUR_X USD.txt") is not None
 
 

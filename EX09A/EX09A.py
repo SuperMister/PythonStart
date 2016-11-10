@@ -16,7 +16,7 @@ def read_from_file(file):
 
 
 def euro_rates_main():
-    """Give info about longest increase period of EUR.
+    """Give information about longest increase period of EUR.
 
     :return: String with info about longest increase period od EUR.
     """
