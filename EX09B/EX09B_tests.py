@@ -25,7 +25,7 @@ def test_no_syntax_error():
 
 
 def test_type_of_output_max():
-    """Test if output is integer"""
+    """Test if output is integer."""
     assert isinstance(EX09B.seq_nr_of_max_rate([0, 1, 3, 5, 7, 8]), int)
 
 
@@ -40,7 +40,7 @@ def test_biggest_not_none():
 
 
 def test_type_of_output_min():
-    """Test if output is integer"""
+    """Test if output is integer."""
     assert isinstance(EX09B.seq_nr_of_min_rate([0, 1, 3, 5, 7, 8]), int)
 
 
@@ -56,17 +56,17 @@ def test_smallest_not_none():
 
 def test_type_of_output_range():
     """Test if function output is integer."""
-    assert isinstance(EX09B.number_of_rates_in_range([1, 3, 5 , 8, 11], 3 , 8), int)
+    assert isinstance(EX09B.number_of_rates_in_range([1, 3, 5, 8, 11], 3, 8), int)
 
 
 def test_number_of_rates():
     """Test if function takes limits correctly."""
-    assert EX09B.number_of_rates_in_range([1, 3, 5 , 8, 11], 3 , 8) == 3
+    assert EX09B.number_of_rates_in_range([1, 3, 5, 8, 11], 3, 8) == 3
 
 
 def test_number_of_rates_for_syntax():
     """Test if output is not SyntaxError."""
-    assert EX09B.number_of_rates_in_range([1, 3, 5 , 8, 11], 3 , 8) != SyntaxError
+    assert EX09B.number_of_rates_in_range([1, 3, 5, 8, 11], 3, 8) != SyntaxError
 
 
 def test_euro_rates_main():
