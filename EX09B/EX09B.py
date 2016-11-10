@@ -54,7 +54,7 @@ def seq_nr_of_max_rate(rates):
 
 
 def seq_nr_of_min_rate(rates):
-    """Find the lowest rate of Euro.
+    """Find the lowest rate of EUR.
 
     :param rates: List of EUR rates.
     :return: Return index of the lowest rate in list of EUR rates.
@@ -75,13 +75,13 @@ def number_of_rates_in_range(rates, min, max):
     """Count how many times Euro rate was in the top half and in the bottom half.
 
     :param rates: List of EUR rates.
-    :param min: The lowest rate of EUR in list of EUR rates.
-    :param max: The biggest rate of EUR in list of EUR rates.
+    :param min: Minimum limit for counting amount of rates.
+    :param max: Maximum limit for counting amount of rates.
     :return: Return number of times when Euro was in the top half and in the bottom half.
     """
-    count = 0
+    number_of_rates = 0
     for i in rates:
         if min <= i <= max:
-            count += 1
-    return count
+            number_of_rates += 1
+    return number_of_rates
 print(euro_rates_main())
