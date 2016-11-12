@@ -57,7 +57,3 @@ def sort_random_elements(list_of_numbers):
         if list_of_numbers[a] < list_of_numbers[b]:
             list_of_numbers[b], list_of_numbers[a] = list_of_numbers[a], list_of_numbers[b]
     return list_of_numbers
-
-
-print(main())
-
