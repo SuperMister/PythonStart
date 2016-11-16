@@ -23,4 +23,4 @@ def check_string(text, pattern):
 
 
 def monkey_day(pattern):
-
+    pass
