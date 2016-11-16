@@ -20,7 +20,7 @@ def random_sort(list_of_numbers):
     """Sort list and count number of operations.
 
     :param list_of_numbers: List of numbers.
-    :return: Return sorted list and number of operations.
+    :return: Return sorted list and number of operations done.
     """
     number_of_operations = 0
     while not is_sorted(list_of_numbers):
