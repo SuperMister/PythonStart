@@ -17,7 +17,7 @@ def main():
 
 
 def random_sort(list_of_numbers):
-    """Sort list and count number of operations.
+    """Sort list and count number of operations done.
 
     :param list_of_numbers: List of numbers.
     :return: Return sorted list and number of operations done.

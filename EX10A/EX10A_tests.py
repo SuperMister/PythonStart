@@ -36,12 +36,12 @@ def test_if_changed():
 
 def test_number_of_operations():
     """Test."""
-    assert EX10A.random_sort([1, 2, 3, 4, 5, 6, 7, 8])[1] > 0
+    assert EX10A.random_sort([8, 7, 6, 5, 4, 3, 2, 1])[1] > 0
 
 
 def test_if_random_sort_list():
     """Test."""
-    assert isinstance(EX10A.random_sort([1, 2, 3, 4, 5, 6, 7, 8])[0], str)
+    assert isinstance(EX10A.random_sort([1, 2, 3, 4, 5, 6, 7, 8])[0], list)
 
 
 def test_if_random_sort_is_not_none():
