@@ -41,6 +41,7 @@ def test_number_of_operations():
 
 def test_if_random_sort_list():
     """Test."""
+
     assert isinstance(EX10A.random_sort([1, 2, 3, 4, 5, 6, 7, 8])[0], list)
 
 
