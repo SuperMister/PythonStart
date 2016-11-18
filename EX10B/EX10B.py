@@ -29,7 +29,7 @@ def random_string(chars, length):
 def check_string(text, pattern):
     """
 
-    :param text:
+    :param text: f
     :param pattern:
     :return:
     """
