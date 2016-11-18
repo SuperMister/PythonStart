@@ -26,15 +26,6 @@ def random_string(chars, length):
     return word
 
 
-def check_string(text, pattern):
-    """
-
-    :param text: f
-    :param pattern:
-    :return:
-    """
-    return pattern.lower() in text.lower()
-
 
 def monkey_day(pattern):
     """
