@@ -5,11 +5,21 @@ import random
 
 
 def main():
+    """
+
+    :return:
+    """
     pattern, simulations, num_of_monkeys = get_inputs()
     return monkey_day(pattern, num_of_monkeys, simulations)
 
 
 def random_string(chars, length):
+    """
+
+    :param chars:
+    :param length:
+    :return:
+    """
     word = ""
     for i in range(length):
         word += random.choice(chars)
@@ -17,10 +27,23 @@ def random_string(chars, length):
 
 
 def check_string(text, pattern):
+    """
+
+    :param text:
+    :param pattern:
+    :return:
+    """
     return pattern.lower() in text.lower()
 
 
 def monkey_day(pattern, num_of_monkeys, number=4 * 3600):
+    """
+
+    :param pattern:
+    :param num_of_monkeys:
+    :param number:
+    :return:
+    """
     symbols = number
     pattern = pattern.upper()
     all_monkeys = [""] * num_of_monkeys
@@ -40,6 +63,10 @@ def monkey_day(pattern, num_of_monkeys, number=4 * 3600):
 
 
 def get_inputs():
+    """
+
+    :return:
+    """
     word = input("Write your word: ")
     simulations = int(input("Amount of simulations: "))
     monkeys = int(input("Amount of monkeys: "))
