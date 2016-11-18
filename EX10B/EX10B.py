@@ -10,7 +10,7 @@ def main():
     :return:
     """
     pattern, simulations, num_of_monkeys = get_inputs()
-    return monkey_day(pattern, num_of_monkeys, simulations)
+    return monkey_day(pattern)
 
 
 def random_string(chars, length):
@@ -36,7 +36,35 @@ def check_string(text, pattern):
     return pattern.lower() in text.lower()
 
 
-def monkey_day(pattern, num_of_monkeys, number=4 * 3600):
+def monkey_day(pattern):
+    """
+
+    :param pattern:
+    :param num_of_monkeys:
+    :param number:
+    :return:
+    """
+    num_of_monkeys = 1
+    number = 4 * 3600
+    symbols = number
+    pattern = pattern.upper()
+    all_monkeys = [""] * num_of_monkeys
+    for x in range(symbols):
+        for i in range(len(all_monkeys)):
+            random_sign = chr(random.randrange(65, 91))
+            all_monkeys[i] += random_sign
+            if all_monkeys[i][-1] == pattern[len(all_monkeys[i]) - 1]:
+                if len(pattern) == len(all_monkeys[i]):
+                    return True
+            else:
+                if all_monkeys[i][-1] == pattern[0]:
+                    all_monkeys[i] = all_monkeys[i][-1]
+                else:
+                    all_monkeys[i] = str()
+    return False
+
+
+def monkey_day_2(pattern, num_of_monkeys, number=4 * 3600):
     """
 
     :param pattern:
@@ -72,5 +100,3 @@ def get_inputs():
     monkeys = int(input("Amount of monkeys: "))
     return word, simulations, monkeys
 
-
-print(main())
