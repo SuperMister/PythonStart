@@ -96,5 +96,3 @@ def get_inputs():
     simulations = int(input("Number of simulations: "))
     monkeys = int(input("Number of monkeys: "))
     return word, simulations, monkeys
-
-print(main())
