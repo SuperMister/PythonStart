@@ -29,7 +29,7 @@ def random_string(chars, length):
 def check_string(text, pattern):
     """Control if word is in text.
 
-    :param text: Text given.
+    :param text: Given text.
     :param pattern: Given word.
     :return: Return True if word is in text, otherwise return False.
     """
