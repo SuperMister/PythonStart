@@ -65,13 +65,20 @@ def check_string(text, pattern):
 
 
 def monkey_day(pattern):
-    a = monkeys_day(pattern, 1)
-    if a is None:
-        return False
-    return True
+    """
+
+    :param pattern:
+    :return:
+    """
+    monkey = Monkey(pattern)
+    for i in range(3600 * 4):
+        monkey.push_button()
+        if monkey.check_last_written_char():
+            return True
+    return False
 
 
-def monkeys_day(pattern, num_of_monkeys):
+def monkeys_find(pattern, num_of_monkeys):
     """Smthddd.
 
     :param pattern:
