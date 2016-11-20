@@ -32,7 +32,7 @@ def main(word, monkeys, simulations):
     """
     amounts_of_time = [""] * simulations
     for i in range(simulations):
-        amounts_of_time[i] = monkey_day(word, monkeys)
+        amounts_of_time[i] = monkeys_day(word, monkeys)
 
     all_time = 0
     for i in amounts_of_time:
@@ -64,7 +64,11 @@ def check_string(text, pattern):
     return pattern.lower() in text.lower()
 
 
-def monkey_day(pattern, num_of_monkeys):
+def monkey_day(pattern):
+    return monkeys_day(pattern, 1)
+
+
+def monkeys_day(pattern, num_of_monkeys):
     """Smthddd.
 
     :param pattern:
