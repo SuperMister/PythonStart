@@ -65,7 +65,7 @@ def check_string(text, pattern):
 
 
 def monkey_day(pattern, num_of_monkeys):
-    """Smth.
+    """Smthddd.
 
     :param pattern:
     :param num_of_monkeys:
