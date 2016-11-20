@@ -4,16 +4,13 @@
 import random
 
 
-class Dissarange:
+class Disarrange:
     def __init__(self):
         self.initial_list = []
         self.result_list = []
 
-
-
     def add_value(self, value):
         return self.initial_list.append(value)
-
 
     def new_order(self):
         if len(self.initial_list) < 2:
