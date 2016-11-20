@@ -64,7 +64,7 @@ def check_string(text, pattern):
     return pattern.lower() in text.lower()
 
 
-def monkey_day(pattern, num_of_monkeys):
+def monkey_day(pattern):
     """Smthddd.
 
     :param pattern:
