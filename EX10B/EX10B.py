@@ -8,13 +8,16 @@ class Monkey:
     """Monkey actions."""
 
     def __init__(self, pattern):
+        """Constructor."""
         self.text = str()
         self.word = pattern.upper()
 
     def push_button(self):
+        """Monkey push button."""
         self.text += chr(random.randrange(65, 91))
 
     def check_last_written_char(self):
+        """Monkey control last character written."""
         if self.text[-1] == self.word[len(self.text) - 1]:
             if len(self.text) == len(self.word):
                 return True
@@ -65,10 +68,10 @@ def check_string(text, pattern):
 
 
 def monkey_day(pattern):
-    """
+    """Control if monkey has written needed word in one day.
 
-    :param pattern:
-    :return:
+    :param pattern: Given word.
+    :return: Return True if monkey has written needed word.
     """
     monkey = Monkey(pattern)
     for i in range(3600 * 4):
@@ -79,10 +82,10 @@ def monkey_day(pattern):
 
 
 def monkeys_find_word(pattern, num_of_monkeys):
-    """Smthddd.
+    """Count how many days will it take for monkeys to type .
 
-    :param pattern:
-    :param num_of_monkeys:
+    :param pattern: Given word.
+    :param num_of_monkeys: Number of monkeys that type.
     :return:
     """
     all_monkeys = [Monkey(pattern) for i in range(num_of_monkeys)]
@@ -112,4 +115,3 @@ def print_output():
     return "On the average it took " + str(main(pattern, num_of_monkeys, simulations)) \
            + " days for " + str(num_of_monkeys) + " monkeys to type the word " + "\"" + pattern + "\"" + ". " \
            + "Number of simulations: " + str(simulations) + "."
-
