@@ -64,14 +64,14 @@ def check_string(text, pattern):
     return pattern.lower() in text.lower()
 
 
-def monkey_day(pattern):
+def monkey_day(pattern, num_of_monkeys):
     """Smthddd.
 
     :param pattern:
     :param num_of_monkeys:
     :return:
     """
-    all_monkeys = [Monkey(pattern) for x in range(num_of_monkeys)]
+    all_monkeys = [Monkey(pattern) for i in range(num_of_monkeys)]
     seconds = 0
     while True:
         for i in range(len(all_monkeys)):
