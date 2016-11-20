@@ -46,5 +46,3 @@ def test_monkeyday_for_type():
 def test_monkeyday_not_none():
     """Test."""
     assert EX10B.monkey_day("abcdefg") is not None
-
-

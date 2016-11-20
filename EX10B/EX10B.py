@@ -48,7 +48,7 @@ def random_string(chars, length):
     """Generate random word with given length and given characters.
 
     :param chars: Available characters.
-    :param length: Length of the word.
+    :param length: Length of the given word.
     :return: Return random word from the available characters and with given length.
     """
     word = ""
