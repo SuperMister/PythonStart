@@ -32,7 +32,7 @@ def main(word, monkeys, simulations):
     """
     amounts_of_time = [""] * simulations
     for i in range(simulations):
-        amounts_of_time[i] = monkeys_day(word, monkeys)
+        amounts_of_time[i] = monkeys_find_word(word, monkeys)
 
     all_time = 0
     for i in amounts_of_time:
@@ -78,7 +78,7 @@ def monkey_day(pattern):
     return False
 
 
-def monkeys_find(pattern, num_of_monkeys):
+def monkeys_find_word(pattern, num_of_monkeys):
     """Smthddd.
 
     :param pattern:
@@ -104,3 +104,12 @@ def get_inputs():
     simulations = int(input("Amount of simulations: "))
     monkeys = int(input("Amount of monkeys: "))
     return word, monkeys, simulations
+
+
+def print_output():
+    """Print output."""
+    pattern, num_of_monkeys, simulations = get_inputs()
+    return "On the average it took " + str(main(pattern, num_of_monkeys, simulations)) \
+           + " days for " + str(num_of_monkeys) + " monkeys to type the word " + "\"" + pattern + "\"" + ". " \
+           + "Number of simulations: " + str(simulations) + "."
+
