@@ -4,13 +4,41 @@
 import random
 
 
-def main():
-    """Main function.
+class Monkey:
+    """Monkey actions."""
 
-    :return: Return True if monkeys have written given word, otherwise return False.
+    def __init__(self, pattern):
+        self.text = str()
+        self.word = pattern.upper()
+
+    def push_button(self):
+        self.text += chr(random.randrange(65, 91))
+
+    def check_last_written_char(self):
+        if self.text[-1] == self.word[len(self.text) - 1]:
+            if len(self.text) == len(self.word):
+                return True
+        else:
+            if self.text[-1] == self.word[0]:
+                self.text = self.text[-1]
+            else:
+                self.text = str()
+
+
+def main(word, monkeys, simulations):
+    """Count average amount of days that monkeys need for typing given word.
+
+    :return: Return average time that monkeys need for typing given word.
     """
-    pattern, simulations, num_of_monkeys = get_inputs()
-    return monkey_day(pattern)
+    amounts_of_time = [""] * simulations
+    for i in range(simulations):
+        amounts_of_time[i] = monkey_day(word, monkeys)
+
+    all_time = 0
+    for i in amounts_of_time:
+        all_time += i
+    average_time = int(all_time / simulations)
+    return average_time
 
 
 def random_string(chars, length):
@@ -36,63 +64,29 @@ def check_string(text, pattern):
     return pattern.lower() in text.lower()
 
 
-def monkey_day(pattern):
-    """Control if monkeys will find a given word within a day.
+def monkey_day(pattern, num_of_monkeys):
+    """Smth.
 
-    :param pattern: Word that we want to control.
-    :return: Return True if monkeys have written given word, otherwise return False.
+    :param pattern:
+    :param num_of_monkeys:
+    :return:
     """
-    num_of_monkeys = 10
-    number_of_operations = 4 * 3600  # number_of_operations = seconds
-    pattern = pattern.upper()
-    all_monkeys = [""] * num_of_monkeys
-    for x in range(number_of_operations):  # number_of_operations = seconds
+    all_monkeys = [Monkey(pattern) for x in range(num_of_monkeys)]
+    seconds = 0
+    while True:
         for i in range(len(all_monkeys)):
-            random_sign = chr(random.randrange(65, 91))
-            all_monkeys[i] += random_sign
-            if all_monkeys[i][-1] == pattern[len(all_monkeys[i]) - 1]:
-                if len(pattern) == len(all_monkeys[i]):
-                    return True
-            else:
-                if all_monkeys[i][-1] == pattern[0]:
-                    all_monkeys[i] = all_monkeys[i][-1]
-                else:
-                    all_monkeys[i] = str()
-    return False
-
-
-def monkey_day_2(pattern, num_of_monkeys, number_of_operations=4 * 3600):
-    """Control if monkeys will find a given word within a day.
-
-    :param pattern: Given word.
-    :param num_of_monkeys: Number of monkeys.
-    :param number_of_operations: Number of operations to do.
-    :return: Return True if monkeys have written given word, otherwise return False.
-    """
-    pattern = pattern.upper()
-    all_monkeys = [""] * num_of_monkeys
-
-    for x in range(number_of_operations):  # number_of_operations = seconds
-        for i in range(len(all_monkeys)):
-            random_sign = chr(random.randrange(65, 91))
-            all_monkeys[i] += random_sign
-            if all_monkeys[i][-1] == pattern[len(all_monkeys[i]) - 1]:
-                if len(pattern) == len(all_monkeys[i]):
-                    return True
-            else:
-                if all_monkeys[i][-1] == pattern[0]:
-                    all_monkeys[i] = all_monkeys[i][-1]
-                else:
-                    all_monkeys[i] = str()
-    return False
+            seconds += 1
+            all_monkeys[i].push_button()
+            if all_monkeys[i].check_last_written_char():
+                return int(seconds / 3600 * 4)
 
 
 def get_inputs():
-    """Get inputs from user.
+    """Get info from user.
 
-    :return: Return word, number of simulations and number of monkeys that user has entered.
+    :return: Return word, number of monkeys and number of simulations that user prefers.
     """
     word = input("Write your word: ")
-    simulations = int(input("Number of simulations: "))
-    monkeys = int(input("Number of monkeys: "))
-    return word, simulations, monkeys
+    simulations = int(input("Amount of simulations: "))
+    monkeys = int(input("Amount of monkeys: "))
+    return word, monkeys, simulations
