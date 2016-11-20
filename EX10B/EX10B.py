@@ -65,7 +65,10 @@ def check_string(text, pattern):
 
 
 def monkey_day(pattern):
-    return monkeys_day(pattern, 1)
+    a = monkeys_day(pattern, 1)
+    if a is None:
+        return False
+    return True
 
 
 def monkeys_day(pattern, num_of_monkeys):
