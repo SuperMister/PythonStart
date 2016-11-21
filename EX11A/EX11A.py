@@ -3,6 +3,7 @@
 
 class Disarrange:
     """Disarrange list."""
+
     def __init__(self):
         """Class constructor."""
         self.initial_list = []

@@ -58,4 +58,3 @@ def test_get_list_length():
     object_list.initial_list = [2, 5, 9]
     object_list.new_order()
     assert len(object_list.get_list("result")) == len(object_list.get_list("initial"))
-
