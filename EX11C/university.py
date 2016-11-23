@@ -33,9 +33,8 @@ class Student:
     def add_subject(self, subject):
         """Add a subject to student list. """
         if subject not in self.list_of_subjects:
-            if subject in Subjects.list_of_subjects:
-                print("Subject is added successfully!")
-                self.list_of_subjects.append(subject)
+            print("Subject is added successfully!")
+            self.list_of_subjects.append(subject)
         else:
             print("Such subject already exists.")
 
@@ -83,7 +82,7 @@ class Professor:
 
 class Subjects:
     """A class of subjects."""
-    list_of_subjects = []
+    all_subjects = []
 
     def __init__(self, name):
         """
@@ -92,8 +91,8 @@ class Subjects:
         :param name:
         """
         self.name = name
-        Subjects.list_of_subjects.append(self.name)
-        self.subjects = Subjects.list_of_subjects
+        Subjects.all_subjects.append(self.name)
+        self.subjects = Subjects.all_subjects
         self.professor = {}
 
     def get_name(self):
@@ -119,10 +118,3 @@ class Subjects:
         if self.name in self.subjects:
             self.professor[self.name] = professor
 
-    def all_subjects(self):
-        """
-        All subjects.
-
-        :return:
-        """
-        return self.subjects
