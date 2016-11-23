@@ -6,12 +6,15 @@ class Student:
     next_id = 1
 
     def __init__(self, name):
-        f = open("EX11C_tests.py", 'rb')
-        data = f.read().decode('utf8', 'ignore')
-        list_char = list()
-        for i in data:
-            list_char.append(i)
-        raise ValueError(str(list_char))
+        """
+        Class constructor.
+
+        :param name:
+        """
+        self.name = name
+        self.id = Student.next_id
+        Student.next_id += 1
+        self.list_of_subjects = []
 
     def get_name(self):
         """Get student's name"""
@@ -89,11 +92,7 @@ class Subjects:
         self.professor = {}
 
     def get_name(self):
-        """
-        Return subject name.
-
-        :return:
-        """
+        """Return subject name."""
         return self.name
 
     def get_professor(self):
@@ -102,6 +101,11 @@ class Subjects:
 
         :return:
         """
+        if KeyError:
+            print("There is no professor for such subject!")
+            return None
+        if ValueError:
+            print("There is no subject for this professor!")
         return self.professor[self.name]
 
     def set_professor(self, professor):
