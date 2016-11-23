@@ -101,10 +101,12 @@ class Subjects:
 
         :return:
         """
-        if KeyError:
+        if type(self.professor[self.name]) is not str:
+            return None
+        elif KeyError:
             print("There is no professor for such subject!")
             return None
-        if ValueError:
+        elif ValueError:
             print("There is no subject for this professor!")
             return None
         return self.professor[self.name]
@@ -114,8 +116,6 @@ class Subjects:
         Link between professor and subject.
         """
         if self.name in self.subjects:
-            if professor is not str:
-                return None
             self.professor[self.name] = professor
 
     def all_subjects(self):
