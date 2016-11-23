@@ -106,6 +106,7 @@ class Subjects:
             return None
         if ValueError:
             print("There is no subject for this professor!")
+            return None
         return self.professor[self.name]
 
     def set_professor(self, professor):
@@ -113,6 +114,8 @@ class Subjects:
         Link between professor and subject.
         """
         if self.name in self.subjects:
+            if professor is not str:
+                return None
             self.professor[self.name] = professor
 
     def all_subjects(self):
