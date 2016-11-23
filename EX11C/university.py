@@ -32,7 +32,7 @@ class Student:
 
     def add_subject(self, subject):
         """Add a subject to student list."""
-        if subject not in self.list_of_subjects and subject in Subjects.list_of_subjects:
+        if subject not in self.list_of_subjects:
             print("Subject is added successfully!")
             self.list_of_subjects.append(subject)
         else:
