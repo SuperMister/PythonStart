@@ -3,7 +3,7 @@
 
 class Student:
     """A student class."""
-    id = 1
+    next_id = 1
 
     def __init__(self, name):
         """
@@ -12,8 +12,8 @@ class Student:
         :param name:
         """
         self.name = name
-        self.id = Student.id
-        Student.id += 1
+        self.id = Student.next_id
+        Student.next_id += 1
         self.list_of_subjects = []
 
     def get_name(self):
@@ -86,11 +86,7 @@ class Professor:
         self.subjects_num += 1
 
     def get_name(self):
-        """
-        Return professor name.
-
-        :return:
-        """
+        """Return professor name."""
         return self.name
 
 
