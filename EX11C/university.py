@@ -23,38 +23,27 @@ class Student:
     def get_id(self):
         """
         Return student ID number.
-
-        :return:
         """
         return self.id
 
     def get_subjects(self):
         """
         Return subject list.
-
-        :return:
         """
         return self.list_of_subjects
 
     def add_subject(self, subject):
         """
         Add a subject to student list.
-
-        :param subject:
-        :return:
         """
         if subject not in self.list_of_subjects:
             print("Subject is added successfully")
             self.list_of_subjects.append(subject)
 
     def remove_subject(self, subject):
-        """
-        Remove a subject from student list.
-
-        :param subject:
-        :return:
-        """
+        """Remove a subject from student list."""
         if subject in self.list_of_subjects:
+            print("Subject is successfully removed!")
             self.list_of_subjects.remove(subject)
 
 
