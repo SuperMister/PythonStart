@@ -31,7 +31,7 @@ class Student:
         return self.list_of_subjects
 
     def add_subject(self, subject):
-        """Add a subject to student list."""
+        """Add a subject to student list. """
         if subject not in self.list_of_subjects:
             print("Subject is added successfully!")
             self.list_of_subjects.append(subject)
