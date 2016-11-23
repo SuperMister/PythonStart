@@ -45,7 +45,7 @@ class Student:
         if subject in self.list_of_subjects:
             print("Subject is successfully removed!")
             self.list_of_subjects.remove(subject)
-
+        print("There is no subject to remove")
 
 class Professor:
     """A professor class."""
