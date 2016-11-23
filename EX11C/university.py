@@ -101,9 +101,7 @@ class Subjects:
 
         :return:
         """
-        if type(self.professor[self.name]) is not str:
-            return None
-        elif KeyError:
+        if KeyError:
             print("There is no professor for such subject!")
             return None
         elif ValueError:
