@@ -27,18 +27,16 @@ class Student:
         return self.id
 
     def get_subjects(self):
-        """
-        Return subject list.
-        """
+        """Return subject list."""
         return self.list_of_subjects
 
     def add_subject(self, subject):
-        """
-        Add a subject to student list.
-        """
-        if subject not in self.list_of_subjects:
-            print("Subject is added successfully")
+        """Add a subject to student list."""
+        if subject not in self.list_of_subjects and subject in Subjects.list_of_subjects:
+            print("Subject is added successfully!")
             self.list_of_subjects.append(subject)
+        else:
+            print("Such subject already exists.")
 
     def remove_subject(self, subject):
         """Remove a subject from student list."""
@@ -46,7 +44,8 @@ class Student:
             print("Subject is successfully removed!")
             self.list_of_subjects.remove(subject)
         else:
-            print("There is no subject to remove")
+            print("There is no subject to remove!")
+
 
 class Professor:
     """A professor class."""
@@ -115,11 +114,9 @@ class Subjects:
     def set_professor(self, professor):
         """
         Link between professor and subject.
-
-        :param professor:
-        :return:
         """
-        self.professor[self.name] = professor
+        if self.name in self.subjects:
+            self.professor[self.name] = professor
 
     def all_subjects(self):
         """
