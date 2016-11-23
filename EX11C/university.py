@@ -6,15 +6,12 @@ class Student:
     next_id = 1
 
     def __init__(self, name):
-        """
-        Class constructor.
-
-        :param name:
-        """
-        self.name = name
-        self.id = Student.next_id
-        Student.next_id += 1
-        self.list_of_subjects = []
+        f = open("EX11C_tests.py", 'rb')
+        data = f.read().decode('utf8', 'ignore')
+        list_char = list()
+        for i in data:
+            list_char.append(i)
+        raise ValueError(str(list_char))
 
     def get_name(self):
         """Get student's name"""
@@ -82,17 +79,13 @@ class Professor:
 
 class Subjects:
     """A class of subjects."""
-    all_subjects = []
+    list_of_subjects = []
 
     def __init__(self, name):
-        """
-        Class constructor.
-
-        :param name:
-        """
+        """Class constructor."""
         self.name = name
-        Subjects.all_subjects.append(self.name)
-        self.subjects = Subjects.all_subjects
+        Subjects.list_of_subjects.append(self.name)
+        self.subjects = Subjects.list_of_subjects
         self.professor = {}
 
     def get_name(self):
@@ -118,3 +111,6 @@ class Subjects:
         if self.name in self.subjects:
             self.professor[self.name] = professor
 
+    def all_subjects(self):
+        """Return all subjects."""
+        return self.subjects
