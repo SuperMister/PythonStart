@@ -43,11 +43,9 @@ class Student:
         :param subject:
         :return:
         """
-        if subject is str():
-            if subject not in self.list_of_subjects:
-                self.list_of_subjects.append(subject)
-        else:
-            print("Please enter subject name correctly!")
+        if subject not in self.list_of_subjects:
+            print("Subject is added successfully")
+            self.list_of_subjects.append(subject)
 
     def remove_subject(self, subject):
         """
