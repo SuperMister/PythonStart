@@ -3,14 +3,11 @@
 
 class Student:
     """A student class."""
+
     next_id = 1
 
     def __init__(self, name):
-        """
-        Class constructor.
-
-        :param name:
-        """
+        """Class constructor."""
         self.name = name
         self.id = Student.next_id
         Student.next_id += 1
@@ -21,9 +18,7 @@ class Student:
         return self.name
 
     def get_id(self):
-        """
-        Return student ID number.
-        """
+        """Return student ID number."""
         return self.id
 
     def get_subjects(self):
@@ -31,7 +26,7 @@ class Student:
         return self.list_of_subjects
 
     def add_subject(self, subject):
-        """Add a subject to student list. """
+        """Add a subject to the student's list."""
         if subject not in self.list_of_subjects:
             print("Subject is added successfully!")
             self.list_of_subjects.append(subject)
@@ -39,7 +34,7 @@ class Student:
             print("Such subject already exists.")
 
     def remove_subject(self, subject):
-        """Remove a subject from student list."""
+        """Remove a subject from student's list."""
         if subject in self.list_of_subjects:
             print("Subject is successfully removed!")
             self.list_of_subjects.remove(subject)
@@ -51,29 +46,17 @@ class Professor:
     """A professor class."""
 
     def __init__(self, name):
-        """
-        Class constructor.
-
-        :param name:
-        """
+        """Class constructor"""
         self.name = name
         self.subjects_num = 0
 
     def get_number_of_subjects(self):
-        """
-        Get number of subjects.
-
-        :return:
-        """
+        """Get number of subjects"""
         return self.subjects_num
 
     def increase_number_of_subjects(self):
-        """
-        Increase the subjects' num.
-
-        :return:
-        """
-        self.subjects_num += 1
+        """Increase the subject's num"""
+        return self.subjects_num + 1
 
     def get_name(self):
         """Return professor name."""
@@ -82,6 +65,7 @@ class Professor:
 
 class Subjects:
     """A class of subjects."""
+
     list_of_subjects = []
 
     def __init__(self, name):
@@ -96,11 +80,7 @@ class Subjects:
         return self.name
 
     def get_professor(self):
-        """
-        Return teaching professor's name.
-
-        :return:
-        """
+        """Return teaching professor's name."""
         if KeyError:
             print("There is no professor for such subject!")
             return None
@@ -110,9 +90,7 @@ class Subjects:
         return self.professor[self.name]
 
     def set_professor(self, professor):
-        """
-        Link between professor and subject.
-        """
+        """Link between professor and subject."""
         if self.name in self.subjects:
             self.professor[self.name] = professor
 

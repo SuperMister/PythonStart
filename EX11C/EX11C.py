@@ -1,9 +1,11 @@
 """EX11C."""
 
+
 import university
 
 
 def main():
+    """Staff with students and professors."""
     mati = university.Student("Mati")
     kati = university.Student("Kati")
     print(str(mati.get_id()) + "\t" + mati.get_name())
@@ -15,7 +17,7 @@ def main():
     kati.add_subject("Progemine")
     kati.add_subject("fizra")
     kati.add_subject("fizra")
-    kati.remove_subject("fizra")
+    kati.remove_subject("fizhujak")
     kati.add_subject("matemaatika")
     print(kati.get_subjects())
     prof_1 = university.Professor("Neeme Loorits")
@@ -27,9 +29,10 @@ def main():
     print(prof_1.get_number_of_subjects())
     print(prof_2.get_number_of_subjects())
     progemine = university.Subjects("Progemine")
-    progemine.set_professor("Neeme")
-    print(progemine.get_professor())
+    progemine.set_professor(prof_1)
     matemaatika = university.Subjects("Matemaatika")
-    fuusika = university.Subjects("Fuusika")
-    print(matemaatika.all_subjects())
+    matemaatika.set_professor(prof_2)
+    print(matemaatika.get_professor())
+
+
 main()
