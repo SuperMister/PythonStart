@@ -4,6 +4,22 @@
 import EX09A
 
 
+def test_empty_lines():
+    """Test if function do not read empty lines."""
+    assert EX09A.read_from_file("TEST for EMPTY LINES") == ['4.01.2016\t1.0898', '5.01.2016\t1.0746']
+
+
+def test_wrong_answer():
+    """Test if function converts txt.file to list."""
+    assert EX09A.read_from_file("TEST for FIRST") == ['4.01.2016\t1.0898', '5.01.2016\t1.0746']
+
+
+def test_method_working():
+    """Test for right answer."""
+    EX09A.the_longest_increase_of_euro(["01.01.2016", "05.01.2016"], ["1.0230", "1.5080"]) \
+        == "01.01.2016 (1.0230) – 05.01.2016 (1.5080)"
+
+
 def test_not_none():
     """Test if function output is not None."""
     assert EX09A.read_from_file("1 EUR_X USD.txt") is not None
