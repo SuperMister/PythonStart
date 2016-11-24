@@ -27,11 +27,13 @@ class Student:
 
     def add_subject(self, subject):
         """Add a subject to the student's list."""
-        if subject not in self.list_of_subjects:
-            print("Subject is added successfully!")
-            self.list_of_subjects.append(subject)
-        else:
-            print("Such subject already exists.")
+        if subject in Subjects.list_of_subjects:
+            if subject not in self.list_of_subjects:
+                print("Subject is added successfully!")
+                self.list_of_subjects.append(subject)
+            else:
+                print("Such subject already exists.")
+        return None
 
     def remove_subject(self, subject):
         """Remove a subject from student's list."""
