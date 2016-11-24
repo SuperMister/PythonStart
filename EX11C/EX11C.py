@@ -23,6 +23,4 @@ def main():
     print(juri.get_subjects_names())
     print(juri.get_name())
 
-
-
 main()

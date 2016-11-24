@@ -22,7 +22,7 @@ class Student:
         return self.id
 
     def get_subjects_names(self):
-        """"""
+        """Get names of subjects that students study."""
         list_subjects = []
         for i in range(len(self.list_of_subjects)):
             list_subjects.append(self.list_of_subjects[i].name)
