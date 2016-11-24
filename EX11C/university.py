@@ -15,7 +15,7 @@ class Student:
 
     def get_name(self):
         """Get student's name."""
-        return "Name of the student: " + self.name
+        return self.name
 
     def get_id(self):
         """Return student ID number."""
@@ -71,7 +71,7 @@ class Professor:
 
     def get_name(self):
         """Return professor name."""
-        return "Name of the professor: " + self.name
+        return self.name
 
 
 class Subjects:

@@ -5,7 +5,7 @@ import university
 
 
 def main():
-    """Staff with students and professors."""
+    """Good staff with students and professors."""
     liivi = university.Professor("Liivi Kluge")
     neeme = university.Professor("Neeme Loorits")
     matemaatika = university.Subjects("Matemaatika")
