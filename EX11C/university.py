@@ -14,7 +14,7 @@ class Student:
         self.list_of_subjects = []
 
     def get_name(self):
-        """Get student's name"""
+        """Get student's name."""
         return self.name
 
     def get_id(self):
@@ -46,16 +46,16 @@ class Professor:
     """A professor class."""
 
     def __init__(self, name):
-        """Class constructor"""
+        """Class constructor."""
         self.name = name
         self.subjects_num = 0
 
     def get_number_of_subjects(self):
-        """Get number of subjects"""
+        """Get number of subjects."""
         return self.subjects_num
 
     def increase_number_of_subjects(self):
-        """Increase the subject's num"""
+        """Increase the subject's num."""
         return self.subjects_num + 1
 
     def get_name(self):
