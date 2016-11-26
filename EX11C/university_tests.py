@@ -5,7 +5,7 @@ import university
 
 
 def test_student_get_subject_name():
-    """Test if function is adding subject to the student's timetable!"""
+    """Test if function is adding subject to the student's timetable."""
     student = university.Student("Juri")
     matemaatika = university.Subjects("Matemaatika")
     student.add_subject(matemaatika)
