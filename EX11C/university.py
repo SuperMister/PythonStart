@@ -1,8 +1,8 @@
-"""University structure library."""
+"""University machine."""
 
 
 class Student:
-    """A student class."""
+    """Student class."""
 
     next_id = 1
 
@@ -46,14 +46,14 @@ class Student:
     def remove_subject(self, subject):
         """Remove a subject from student's list."""
         if subject in self.list_of_subjects:
-            print("Subject is successfully removed from" + self.name + "'s timetable!")
+            print("Subject is successfully removed from " + self.name + "'s timetable!")
             self.list_of_subjects.remove(subject)
         else:
             print("There is no such subject to remove!")
 
 
 class Professor:
-    """A professor class."""
+    """Professor class."""
 
     def __init__(self, name):
         """Class constructor."""
@@ -65,7 +65,7 @@ class Professor:
         return self.subjects_num
 
     def increase_number_of_subjects(self):
-        """Increase the subject's num."""
+        """Increase the subject's num by 1."""
         self.subjects_num += 1
         print("The number of subjects for professor " + self.name + " is increased by 1!")
 
@@ -75,7 +75,7 @@ class Professor:
 
 
 class Subjects:
-    """A class of subjects."""
+    """Subjects class."""
 
     all_subjects = []
 
@@ -94,10 +94,10 @@ class Subjects:
         return self.professor
 
     def set_professor(self, professor):
-        """Link between professor and subject."""
+        """Set professor for the subject."""
         if professor.__class__ == Professor:
             self.professor = professor
             professor.increase_number_of_subjects()
             print("Now there is a professor for subject: " + self.name)
         else:
-            print("This guy is not a fucking professor!")
+            print("Unfortunately, there is no such professor in our University! Try again!")
