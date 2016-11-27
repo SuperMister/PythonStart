@@ -40,7 +40,7 @@ def read_from_file(file):
 
 
 def get_pairs(list_of_lines):
-    """Find pairs."""
+    """Find paairs."""
     pairs = {}
     for i in range(len(list_of_lines) - 1):
         if "_A_" in list_of_lines[i]:
