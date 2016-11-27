@@ -1,9 +1,12 @@
 """EX12A."""
 
 
+import operator
+
+
 def replace_html_encoding_with_umlauts(string):
-    return string.replace("&otilde", "õ").replace("&ouml", "ö").replace("&uuml", "ü").replace("&auml", "ä")
-print(replace_html_encoding_with_umlauts("taas&ouml_ise_seisvu=mis_j&auml;rgne"))
+    """Parast parandan."""
+    return string.replace("&otilde;", "õ").replace("&ouml;", "ö").replace("&uuml;", "ü").replace("&auml;", "ä")
 
 
 def separate_base_form(string):
@@ -19,9 +22,6 @@ def separate_base_form(string):
                     base = (before_base[i:])
     base_string = "".join(base)
     return base_string.replace("=", "").replace("_", "")
-
-print(separate_base_form("taasiseseisvumisj&auml;rgse    taas_ise_seisvu=mis_j&auml;rgne+0 //_A_ pos sg gen //"))
-
 
 
 def read_from_file(file):
@@ -39,16 +39,27 @@ def read_from_file(file):
     return lines
 
 
-def get_pairs(list_of_lines):
-    """Find paairs."""
+def amount_of_pairs(list_of_lines):
+    """Find pairs."""
     pairs = {}
     for i in range(len(list_of_lines) - 1):
         if "_A_" in list_of_lines[i]:
             if "_S_" in list_of_lines[i + 1]:
-                if pairs.keys() in pairs.keys:
-                    pairs[replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i])) +
-                    replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i + 1]))] = 1
+                if replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i])) + " " + \
+                        replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i + 1])) in pairs.keys():
+                    pairs[replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i])) + " " +
+                          replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i + 1]))] += 1
+                else:
+                    pairs[replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i])) + " " +
+                          replace_html_encoding_with_umlauts(separate_base_form(list_of_lines[i + 1]))] = 1
+    return pairs
 
-    return
-print(get_pairs(read_from_file("aja_pm150699.kym.txt")))
 
+def print_pairs_in_order(pairs, amount):
+    """FFFFF."""
+    pairs_sorted = sorted(pairs.items(), key=operator.itemgetter(1), reverse=True)
+    if amount > len(pairs_sorted):
+        print("There is not so many words.")
+    else:
+        for i in range(amount):
+            print(pairs_sorted[i][0] + " " + str(pairs_sorted[i][1]))
