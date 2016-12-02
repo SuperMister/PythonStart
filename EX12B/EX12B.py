@@ -27,17 +27,37 @@ class SynonymDictionary:
             self.synonym_list.append(synonym)
 
     def find(self, word):  # tagastab kõik antud sõna sünonüümid (mitte sõna ennast) nimekirjana (tähestiku järjekorras)
-        self.word = word
-        self.list_syn = []
+        list_syn = []
         for i in self.synonym_list:
             if word in i.list():
-                self.list_syn = i.list()
-                self.list_syn.remove(word)
-        return self.list_syn
-
+                list_syn = i.list()
+                list_syn.remove(word)
+        return list_syn
 
     def list(self): # tagastab sünonüümid sõnastikuna(dict andmetüüp), kus sõna on võtmeks(key) ja selle sõna sünonüümide nimekiri(tähestiku järjekorras) on väärtuseks(value)
         synonyms = {}
-        synonyms[self.word] = self.list_syn
+        list_syn = []
+        for i in self.synonym_list:
+            for x in i.list():
+                list_syn = i.list()
+                list_syn.remove(x)
+                synonyms[x] = list_syn
         return synonyms
 
+
+syn1 = Synonym(['nimekiri', 'nimestik', 'loend'])
+syn2 = Synonym(['järjend', 'jada', 'sequence'])
+syn1.add('list')
+syn2.remove('jada')
+syn_dict = SynonymDictionary([syn1])
+syn_dict.add(syn2)
+syn_dict.find('loend')  # tagastab  ['list', 'nimekiri', 'nimestik']
+syn_dict.list()  # tagastab sõnastiku:
+# {
+# 'list':['loend', 'nimekiri', 'nimestik'],
+# 'loend':['list', 'nimekiri', 'nimestik'],
+# 'nimekiri':['list', 'loend', 'nimestik'],
+# 'nimestik':['list', 'loend', 'nimekiri'],
+# 'järjend':['sequence'],
+# 'sequence':['järjend']
+# }
