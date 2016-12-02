@@ -12,7 +12,7 @@ class Synonym:
         self.word_list.append(word)
 
     def remove(self, word):  # word on sõna, mis eemaldatakse antud sünonüümist
-        if word not in self.word_list:
+        if word in self.word_list:
             self.word_list.remove(word)
 
 
