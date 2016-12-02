@@ -45,6 +45,7 @@ class SynonymDictionary:
         return synonyms
 
 
+
 syn1 = Synonym(['nimekiri', 'nimestik', 'loend'])
 syn2 = Synonym(['järjend', 'jada', 'sequence'])
 syn1.add('list')
