@@ -17,7 +17,7 @@ class Synonym:
         self.word_list.append(word)
 
     def remove(self, word):
-        """Remove word from the list of words."""
+        """Remove given word from the list of words."""
         if word in self.word_list:
             self.word_list.remove(word)
 
