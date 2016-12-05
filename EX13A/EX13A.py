@@ -3,6 +3,7 @@
 
 class FindBusTime:
     """Class for finding the time of the next buss departure."""
+
     def __init__(self):
         """Class constructor."""
         self.message = "Write your current time! "
@@ -49,6 +50,7 @@ class FindBusTime:
 
 class AskUser:
     """Class for asking user input information."""
+
     def __init__(self, search):
         """Class constructor."""
         self.search = search
@@ -59,8 +61,7 @@ class AskUser:
         self.search.file_to_dict()
         return self.search.find_time(user_input)
 
+
 find_bus_time = FindBusTime()
 info_from_user = AskUser(find_bus_time)
 print(info_from_user.find_time())
-
-
