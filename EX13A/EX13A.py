@@ -1,8 +1,8 @@
-"""Find the next departure time of a buss."""
+"""Find the next departure time of a bus."""
 
 
 class FindBusTime:
-    """Class for finding the time of the next buss departure."""
+    """Class for finding the time of the next bus departure."""
 
     def __init__(self):
         """Class constructor."""
@@ -26,7 +26,7 @@ class FindBusTime:
         return self.dict_of_times
 
     def find_time(self, input_time):
-        """Find the time when will departure next buss."""
+        """Find the time when will departure next bus."""
         hour = int(input_time.split(":")[0])
         minutes = int(input_time.split(":")[1])
         if hour in range(0, 5):
@@ -56,7 +56,7 @@ class AskUser:
         self.search = search
 
     def find_time(self):
-        """Find next buss departure basing on the given time."""
+        """Find next bus departure basing on the given time."""
         user_input = input(self.search.get_message())
         self.search.file_to_dict()
         return self.search.find_time(user_input)
