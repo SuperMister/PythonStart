@@ -1,15 +1,19 @@
-"""Find a time for bus."""
+"""Find the next departure time of a buss."""
 
 
 class FindBusTime:
+    """Class for finding the time of the next buss departure."""
     def __init__(self):
+        """Class constructor."""
         self.message = "Write your current time! "
         self.dict_of_times = {}
 
     def get_message(self):
+        """Get message."""
         return self.message
 
     def file_to_dict(self):
+        """Convert info from txt.file to the dictionary."""
         y = open("bussiajad.txt", "r")
         hours = []
         minutes = []
@@ -21,6 +25,7 @@ class FindBusTime:
         return self.dict_of_times
 
     def find_time(self, input_time):
+        """Find the time when will departure next buss."""
         hour = int(input_time.split(":")[0])
         minutes = int(input_time.split(":")[1])
         if hour in range(0, 5):
@@ -43,15 +48,16 @@ class FindBusTime:
 
 
 class AskUser:
-
+    """Class for asking user input information."""
     def __init__(self, search):
+        """Class constructor."""
         self.search = search
 
     def find_time(self):
+        """Find next buss departure basing on the given time."""
         user_input = input(self.search.get_message())
         self.search.file_to_dict()
         return self.search.find_time(user_input)
-
 
 find_bus_time = FindBusTime()
 info_from_user = AskUser(find_bus_time)
