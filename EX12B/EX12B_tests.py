@@ -43,7 +43,7 @@ def test_add_list_to_dictionary():
 
 
 def test_list_is_giving_dictionary():
-    """Tests."""
+    """Test if function is outputting dictionary and control that all needed keys are included."""
     list_of_keys = syn_dict.list().keys()
     assert isinstance(syn_dict.list(), dict)
     assert sorted(list_of_keys) == sorted(["sequence", "järjend", "jada", "or", "loend", "nimekiri", "nimestik"])
