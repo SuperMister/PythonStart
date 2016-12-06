@@ -33,7 +33,7 @@ class FindBusTime:
             return "Your buss will departure at 5:26"
         if hour == 23:
             range_of_minutes = self.dict_of_times[hour]
-            if minutes > range_of_minutes[-1]:
+            if minutes > int(range_of_minutes[-1]):
                 return "Your buss will departure at 5:26"
         range_of_minutes = self.dict_of_times[hour]
         for i in range(len(range_of_minutes)):
@@ -65,6 +65,6 @@ class AskUser:
 a = FindBusTime()
 a.file_to_dict()
 print(a.find_time("23:58"))
-find_bus_time = FindBusTime()
-info_from_user = AskUser(find_bus_time)
-print(info_from_user.find_user_time())
+# find_bus_time = FindBusTime()
+# info_from_user = AskUser(find_bus_time)
+# print(info_from_user.find_user_time())
