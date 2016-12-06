@@ -61,6 +61,7 @@ class AskUser:
         self.search.file_to_dict()
         return self.search.find_time(user_input)
 
+
 a = FindBusTime()
 a.file_to_dict()
 print(a.find_time("23:58"))

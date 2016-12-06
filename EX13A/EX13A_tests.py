@@ -19,17 +19,17 @@ def test_file_to_dict():
 
 
 def test_find_time():
-    """Test if function"""
+    """Test if function."""
     assert test.find_time("12:30") == "Your buss will departure at 12:33"
     assert test.find_time("1:00") == "Your buss will departure at 5:26"
     assert test.find_time("23:58")
 
 
 def test_2():
-    """Test if function"""
+    """Test if function."""
     pass
 
 
 def test_3():
-    """Test if function"""
+    """Test if function."""
     pass
