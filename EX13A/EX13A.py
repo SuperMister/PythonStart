@@ -55,13 +55,15 @@ class AskUser:
         """Class constructor."""
         self.search = search
 
-    def find_time(self):
+    def find_user_time(self):
         """Find next bus departure basing on the given time."""
         user_input = input(self.search.get_message())
         self.search.file_to_dict()
         return self.search.find_time(user_input)
 
-
+a = FindBusTime()
+a.file_to_dict()
+print(a.find_time("23:58"))
 find_bus_time = FindBusTime()
 info_from_user = AskUser(find_bus_time)
-print(info_from_user.find_time())
+print(info_from_user.find_user_time())
