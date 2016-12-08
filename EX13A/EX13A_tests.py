@@ -4,7 +4,7 @@
 import EX13A
 
 
-test = EX13A.FindBusTime()
+test = EX13A.FindBusTime("bussiajad.txt")
 
 
 def test_get_message():
