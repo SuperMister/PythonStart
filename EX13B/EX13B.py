@@ -5,9 +5,10 @@ import random
 
 
 class FindPair:
-    """Class for finding pairs"""
+    """Class for finding pairs."""
 
     def __init__(self, file):
+        """Class constructor."""
         self.file = file
         self.dict_groups = {}
         self.biggest_group = []
@@ -59,6 +60,7 @@ class FindPair:
         return self.biggest_group
 
     def print_output(self):
+        """Print output."""
         for i in self.all_pairs:
             print(i)
 
