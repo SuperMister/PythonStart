@@ -50,6 +50,7 @@ class Disarrange:
             if feature == "result":
                 return self.result_list
 
+
 a = Disarrange()
 a.add_value(1)
 a.add_value(2)
