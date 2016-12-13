@@ -5,7 +5,7 @@ import operator
 
 
 def replace_html_encoding_with_umlauts(string):
-    """Parast parandan."""
+    """Replace html chars with umlauts."""
     return string.replace("&otilde;", "õ").replace("&ouml;", "ö").replace("&uuml;", "ü").replace("&auml;", "ä")
 
 
@@ -40,7 +40,7 @@ def read_from_file(file):
 
 
 def amount_of_pairs(list_of_lines):
-    """Find pairs."""
+    """Write down pairs into dictionary."""
     pairs = {}
     for i in range(len(list_of_lines) - 1):
         if "_A_" in list_of_lines[i]:
@@ -56,10 +56,12 @@ def amount_of_pairs(list_of_lines):
 
 
 def print_pairs_in_order(pairs, amount):
-    """FFFFF."""
+    """Print so many pairs as needed in the descending order."""
     pairs_sorted = sorted(pairs.items(), key=operator.itemgetter(1), reverse=True)
     if amount > len(pairs_sorted):
         print("There is not so many words.")
     else:
         for i in range(amount):
             print(pairs_sorted[i][0] + " " + str(pairs_sorted[i][1]))
+
+print_pairs_in_order(amount_of_pairs(read_from_file("aja_pm150699.kym.txt")), 5)
