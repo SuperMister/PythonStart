@@ -68,5 +68,6 @@ class FindPair:
 a = FindPair("grupid.txt")
 a.file_to_dict()
 a.find_biggest_group()
-a.find_pair()
+print(a.find_pair())
 a.print_output()
+print(list(a.dict_groups.keys()))
