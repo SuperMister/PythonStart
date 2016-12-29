@@ -287,10 +287,7 @@ class Game:
                     rect.collidepoint(self.x_b - self.ball.rad, self.y_b - self.ball.rad):
                     # If point is in the rect, remove brick.
                 self.brick.coordinates.remove(i)
-                if self.change_y_b == self.ball_speed:  # If ball hits the brick from the upside.
-                    self.change_y_b = -self.ball_speed
-                else:
-                    self.change_y_b = self.ball_speed  # If ball hits the brick from the downside.
+                self.change_y_b = - self.change_y_b  # Change to opposite direction
 
     def start_colour_choice(self):
         """Activating user menu for choosing colours."""
