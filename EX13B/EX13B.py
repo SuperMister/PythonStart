@@ -12,9 +12,9 @@ class FindPair:
 
     def file_to_dict(self):
         """Convert information from file to the dictionary."""
-        y = open(self.file)
+        txt_file = open(self.file)
         person_group = []
-        for i in y:
+        for i in txt_file:
             person_group.append(i.rstrip("\n"))
 
         if not person_group:
@@ -51,7 +51,6 @@ class FindPair:
     def find_pair(self):
         """Find pair for every person in his group."""
         self.unite_small_into_big()
-        keys = list(self.dict_groups.keys())
         for i in self.big_groups:
             first_name = i[0]
             for g in range(len(i) - 1):
@@ -84,10 +83,6 @@ a = FindPair("grupid")
 a.file_to_dict()
 a.find_biggest_groups()
 a.control_for_small_groups()
-print(a.unite_small_into_big())
+a.unite_small_into_big()
 a.find_pair()
 a.print_output()
-
-
-
-
